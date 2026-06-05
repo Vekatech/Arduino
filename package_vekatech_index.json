@@ -1,0 +1,62 @@
+{
+  "packages": [
+    {
+      "name": "vekatech",
+      "maintainer": "Vekatech",
+      "websiteURL": "https://github.com/Vekatech/ArduinoCore-renesas",
+      "email": "info@vekatech.com",
+      "help": {
+        "online": "https://github.com/Vekatech/ArduinoCore-renesas/issues"
+      },
+      "platforms": [
+        {
+          "name": "VK Boards",
+          "architecture": "renesas_uno",
+          "version": "1.5.3",
+          "category": "Contributed",
+          "url": "https://github.com/Vekatech/Arduino/releases/download/v1.5.3/ArduinoCore-renesas_1.5.3.tar.bz2",
+          "archiveFileName": "ArduinoCore-renesas_1.5.3.tar.bz2",
+          "checksum": "SHA-256:40a485efafac3dadc08f40fa6e223b772f9a8377c7d90eaec4f0d58c3294729a",
+          "size": "6297338",
+          "help": {
+            "online": "https://github.com/Vekatech/ArduinoCore-renesas/issues"
+          },
+          "boards": [
+            {
+              "name": "VK NANO R4"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.11.0-arduino2"
+            },
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "7-2017q4"
+            },
+            {
+              "packager": "arduino",
+              "version": "0.11.0-arduino5",
+              "name": "dfu-util"
+            },
+            {
+              "packager": "arduino",
+              "version": "1.9.1-arduino5",
+              "name": "bossac"
+            }
+          ],
+          "discoveryDependencies": [
+            {
+              "packager": "builtin",
+              "name": "dfu-discovery"
+            }
+          ]
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
