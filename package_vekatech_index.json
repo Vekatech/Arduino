@@ -11,13 +11,13 @@
       "platforms": [
         {
           "name": "VK Boards",
-          "architecture": "renesas_uno",
+          "architecture": "renesas",
           "version": "1.5.3",
           "category": "Contributed",
           "url": "https://github.com/Vekatech/Arduino/releases/download/v1.5.3/ArduinoCore-renesas_1.5.3.tar.bz2",
           "archiveFileName": "ArduinoCore-renesas_1.5.3.tar.bz2",
-          "checksum": "SHA-256:40a485efafac3dadc08f40fa6e223b772f9a8377c7d90eaec4f0d58c3294729a",
-          "size": "6297338",
+          "checksum": "SHA-256:50d9718e9fcbcc2560b18fc23aa23bc8ace7d99615f5a8ab2dbf7fae0d3d9e6c",
+          "size": "6297520",
           "help": {
             "online": "https://github.com/Vekatech/ArduinoCore-renesas/issues"
           },
