@@ -6,6 +6,13 @@ Arduino Renesas Core based package containing definitions for Vekatech's Custom 
 
 ### ![Platform](https://img.shields.io/badge/MCU-RA4M1-green)
 - VK NANO R4 (works with the original Arduino **`NANO R4`** bootloader (**`dfu_nano.hex`**))
+### ![Platform](https://img.shields.io/badge/MCU-RA4M2-green)
+- VK-RA4M2_NANO (new board for the Arduino Renesas Core, works with own dedicated bootloader (**`dfu_vk-ra4m2-nano.hex`**))
+- VK-RA4M2-FEMTO (new board for the Arduino Renesas Core, works with own dedicated bootloader (**`dfu_vk-ra4m2-femto.hex`**))
+### ![Platform](https://img.shields.io/badge/MCU-RA6M3-green)
+- Comming soon
+### ![Platform](https://img.shields.io/badge/MCU-RA6M5-green)
+- Comming soon
 
 ## Installation
 
@@ -47,20 +54,43 @@ Sketch → Upload
 
 ```cpp
 void setup() {
+#if defined(ARDUINO_VK_NANO_R4)
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
+#elif defined(ARDUINO_VK_RA4M2_NANO)
+  pinMode(LED_USER, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+#elif defined(ARDUINO_VK_RA4M2_FEMTO)
+  pinMode(LED_BUILTIN, OUTPUT);
+#else
+#error Unsupported board!
+#endif
 }
 
 void loop() {
+#if defined(ARDUINO_VK_NANO_R4)
   digitalWrite(LEDB, LOW);
   digitalWrite(LEDR, HIGH);
-  delay(500);
+  delay(100);
   digitalWrite(LEDR, LOW);
   digitalWrite(LEDG, HIGH);
-  delay(500);
+  delay(100);
   digitalWrite(LEDG, LOW);
   digitalWrite(LEDB, HIGH);
-  delay(500);
+  delay(100);
+#elif defined(ARDUINO_VK_RA4M2_NANO)
+  digitalWrite(LED_USER, LOW);
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(100);
+  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(LED_USER, HIGH); 
+  delay(100);
+#elif defined(ARDUINO_VK_RA4M2_FEMTO)
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(100);
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(100);
+#endif
 }
 ```
